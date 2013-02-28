@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8A598C3-01B9-4674-B258-71C5B97EC4B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClingClient</RootNamespace>
+    <AssemblyName>Clingray</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>clingray.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ClingClient.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|x86'">
+    <OutputPath>bin\x86\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D0323D3D1B9B353A56818097614810666C4B5DE4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ClingClient_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="commitList\CommitListCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="commitList\CommitListCell.Designer.cs">
+      <DependentUpon>CommitListCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="commitList\CommitListToolBelt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="commitList\CommitListToolBelt.Designer.cs">
+      <DependentUpon>CommitListToolBelt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="commitList\MonthSeparatorBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="commitList\MonthSeparatorBar.Designer.cs">
+      <DependentUpon>MonthSeparatorBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="commitList\ProjectNamePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="commitList\ProjectNamePanel.Designer.cs">
+      <DependentUpon>ProjectNamePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="commitList\RepoStatusView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="commitList\RepoStatusView.Designer.cs">
+      <DependentUpon>RepoStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingImage.Designer.cs">
+      <DependentUpon>ClingImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingScrollContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingScrollContainer.designer.cs">
+      <DependentUpon>ClingScrollContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingTree.Designer.cs">
+      <DependentUpon>ClingTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmFrame+balloon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmFrame+monitoring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmFrame+tray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmPreScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmPreScan.Designer.cs">
+      <DependentUpon>frmPreScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="subForms\subCommitTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="subForms\subCommitTree.Designer.cs">
+      <DependentUpon>subCommitTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utilities\ControlUtils.cs" />
+    <Compile Include="common\WorkTreeMonitoring.cs" />
+    <Compile Include="common\RepositoryAccessHistoryManager.cs" />
+    <Compile Include="controls\ClingButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingButton.Designer.cs">
+      <DependentUpon>ClingButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingControlBase.Designer.cs">
+      <DependentUpon>ClingControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingLabel.Designer.cs">
+      <DependentUpon>ClingLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingGridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingGridView.Designer.cs">
+      <DependentUpon>ClingGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingProgress.Designer.cs">
+      <DependentUpon>ClingProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingProjectInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingProjectInfo.Designer.cs">
+      <DependentUpon>ClingProjectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingTableView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingTableView.Designer.cs">
+      <DependentUpon>ClingTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ClingTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingTextBox.Designer.cs">
+      <DependentUpon>ClingTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ShadowLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\ShadowLabel.Designer.cs">
+      <DependentUpon>ShadowLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ipc\ClingIPCCommand.cs" />
+    <Compile Include="ipc\NamedPipeClient.cs" />
+    <Compile Include="ipc\NamedPipeServer.cs" />
+    <Compile Include="ipc\PipeStreamWrapperBase.cs" />
+    <Compile Include="ipc\ReceivedMessageEventArgs.cs" />
+    <Compile Include="popup\frmAddProjectPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmAddProjectPopup.designer.cs">
+      <DependentUpon>frmAddProjectPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmCommonPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmCommonPopup.designer.cs">
+      <DependentUpon>frmCommonPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmCommitMessagePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmCommitMessagePopup.designer.cs">
+      <DependentUpon>frmCommitMessagePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmFileListPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmConfigPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmConfigPopup.Designer.cs">
+      <DependentUpon>frmConfigPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmAlertPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmAlertPopup.designer.cs">
+      <DependentUpon>frmAlertPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\IAlertButtonSet.cs" />
+    <Compile Include="popup\SharedPopupController.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="subForms\subCommitList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="subForms\subCommitList.Designer.cs">
+      <DependentUpon>subCommitList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subForms\subFormInterface.cs" />
+    <Compile Include="subForms\subProjectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="subForms\subProjectList.Designer.cs">
+      <DependentUpon>subProjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utilities\ClingUpdateHelper.cs" />
+    <Compile Include="utilities\ApplicationUtils.cs" />
+    <Compile Include="utilities\ClingWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utilities\EnumUtils.cs" />
+    <Compile Include="utilities\FormTransform.cs" />
+    <Compile Include="utilities\HorizontalStretchableImageDrawer.cs" />
+    <Compile Include="utilities\NinepatchDrawer.cs" />
+    <Compile Include="subForms\subBackupDirSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="subForms\subBackupDirSelect.Designer.cs">
+      <DependentUpon>subBackupDirSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmFrame.Designer.cs">
+      <DependentUpon>frmFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmAboutPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmAboutPopup.Designer.cs">
+      <DependentUpon>frmAboutPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="popup\frmUpdatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup\frmUpdatePopup.Designer.cs">
+      <DependentUpon>frmUpdatePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="controls\ClingCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\ClingCheckBox.Designer.cs">
+      <DependentUpon>ClingCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updater\UpdateDownloader.cs" />
+    <Compile Include="updater\UpdateChecker.cs" />
+    <Compile Include="updater\UpdateInfo.cs" />
+    <Compile Include="utilities\ProgressHelper.cs" />
+    <Compile Include="utilities\RepoHelper.cs" />
+    <Compile Include="utilities\StringUtils.cs" />
+    <Compile Include="utilities\SystemUtils.cs" />
+    <Compile Include="utilities\ToolTipHelper.cs" />
+    <Compile Include="utilities\WindowFlasher.cs" />
+    <EmbeddedResource Include="commitList\CommitListCell.resx">
+      <DependentUpon>CommitListCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="commitList\CommitListToolBelt.resx">
+      <DependentUpon>CommitListToolBelt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="commitList\MonthSeparatorBar.resx">
+      <DependentUpon>MonthSeparatorBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="commitList\ProjectNamePanel.resx">
+      <DependentUpon>ProjectNamePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="commitList\RepoStatusView.resx">
+      <DependentUpon>RepoStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClingButton.resx">
+      <DependentUpon>ClingButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClingControlBase.resx">
+      <DependentUpon>ClingControlBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClingLabel.resx">
+      <DependentUpon>ClingLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClingTableView.resx">
+      <DependentUpon>ClingTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClingTextBox.resx">
+      <DependentUpon>ClingTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ShadowLabel.resx">
+      <DependentUpon>ShadowLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmAddProjectPopup.resx">
+      <DependentUpon>frmAddProjectPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmAlertPopup.resx">
+      <DependentUpon>frmAlertPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmCommitMessagePopup.resx">
+      <DependentUpon>frmCommitMessagePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmCommonPopup.resx">
+      <DependentUpon>frmCommonPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmFrame.resx">
+      <DependentUpon>frmFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmAboutPopup.resx">
+      <DependentUpon>frmAboutPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmUpdatePopup.resx">
+      <DependentUpon>frmUpdatePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup\frmConfigPopup.resx">
+      <DependentUpon>frmConfigPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\ClingCheckBox.resx">
+      <DependentUpon>ClingCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subForms\subCommitList.resx">
+      <DependentUpon>subCommitList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="config\app.Production.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="config\app.Debug.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="config\app.Release.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="clingray.ico" />
+    <None Include="Resources\tutorial_x.png" />
+    <None Include="Resources\tutorial_05.jpg" />
+    <None Include="Resources\tutorial_04.jpg" />
+    <None Include="Resources\tutorial_03.jpg" />
+    <None Include="Resources\tutorial_02.jpg" />
+    <None Include="Resources\tutorial_01.jpg" />
+    <None Include="Resources\tutorial_close_on.png" />
+    <None Include="Resources\tutorial_close.png" />
+    <None Include="Resources\tutorial_arw_rgt_ov.png" />
+    <None Include="Resources\tutorial_arw_rgt_disable.png" />
+    <None Include="Resources\tutorial_arw_rgt.png" />
+    <None Include="Resources\tutorial_arw_left_ov.png" />
+    <None Include="Resources\tutorial_arw_left_disable.png" />
+    <None Include="Resources\tutorial_arw_left.png" />
+    <None Include="Resources\num_b_bg_center.png" />
+    <None Include="Resources\txt_copyright.png" />
+    <None Include="Resources\num_b_bg_rgt.png" />
+    <None Include="Resources\num_b_bg_left.png" />
+    <None Include="Resources\tit_online.png" />
+    <None Include="Resources\tit_num.png" />
+    <None Include="Resources\num_bar.png" />
+    <None Include="Resources\img_list_disk_09.png" />
+    <None Include="Resources\img_list_disk_08.png" />
+    <None Include="Resources\img_list_disk_07.png" />
+    <None Include="Resources\img_list_disk_06.png" />
+    <None Include="Resources\img_list_disk_05.png" />
+    <None Include="Resources\img_list_disk_04.png" />
+    <None Include="Resources\img_list_disk_03.png" />
+    <None Include="Resources\img_list_disk_02.png" />
+    <None Include="Resources\img_list_disk_01.png" />
+    <None Include="Resources\img_list_disk_10.png" />
+    <None Include="Resources\txt_view_writing_disable.png" />
+    <None Include="Resources\txt_state_record_off.png" />
+    <None Include="Resources\txt_state_record_disable.png" />
+    <None Include="Resources\img_scroll_top.png" />
+    <None Include="Resources\img_scroll_mid.png" />
+    <None Include="Resources\img_scroll_bot.png" />
+    <None Include="Resources\btn_write_record_disable.png" />
+    <Content Include="Resources\ico_online.png" />
+    <Content Include="Resources\img_date_dd_01.png" />
+    <Content Include="Resources\img_date_dd_02.png" />
+    <Content Include="Resources\img_date_dd_03.png" />
+    <Content Include="Resources\img_date_dd_04.png" />
+    <Content Include="Resources\img_date_dd_05.png" />
+    <Content Include="Resources\img_date_dd_06.png" />
+    <Content Include="Resources\img_date_dd_07.png" />
+    <Content Include="Resources\img_date_dd_08.png" />
+    <Content Include="Resources\img_date_dd_09.png" />
+    <Content Include="Resources\img_date_dd_10.png" />
+    <Content Include="Resources\img_date_dd_11.png" />
+    <Content Include="Resources\img_date_dd_12.png" />
+    <Content Include="Resources\img_date_dd_13.png" />
+    <Content Include="Resources\img_date_dd_14.png" />
+    <Content Include="Resources\img_date_dd_15.png" />
+    <Content Include="Resources\img_date_dd_16.png" />
+    <Content Include="Resources\img_date_dd_17.png" />
+    <Content Include="Resources\img_date_dd_18.png" />
+    <Content Include="Resources\img_date_dd_19.png" />
+    <Content Include="Resources\img_date_dd_20.png" />
+    <Content Include="Resources\img_date_dd_21.png" />
+    <Content Include="Resources\img_date_dd_22.png" />
+    <Content Include="Resources\img_date_dd_23.png" />
+    <Content Include="Resources\img_date_dd_24.png" />
+    <Content Include="Resources\img_date_dd_25.png" />
+    <Content Include="Resources\img_date_dd_26.png" />
+    <Content Include="Resources\img_date_dd_27.png" />
+    <Content Include="Resources\img_date_dd_28.png" />
+    <Content Include="Resources\img_date_dd_29.png" />
+    <Content Include="Resources\img_date_dd_30.png" />
+    <Content Include="Resources\img_date_dd_31.png" />
+    <Content Include="Resources\img_date_mm_01.png" />
+    <Content Include="Resources\img_date_mm_02.png" />
+    <Content Include="Resources\img_date_mm_03.png" />
+    <Content Include="Resources\img_date_mm_04.png" />
+    <Content Include="Resources\img_date_mm_05.png" />
+    <Content Include="Resources\img_date_mm_06.png" />
+    <Content Include="Resources\img_date_mm_07.png" />
+    <Content Include="Resources\img_date_mm_08.png" />
+    <Content Include="Resources\img_date_mm_09.png" />
+    <Content Include="Resources\img_date_mm_10.png" />
+    <Content Include="Resources\img_date_mm_11.png" />
+    <Content Include="Resources\img_date_mm_12.png" />
+    <None Include="Resources\btn_ref_hover.png" />
+    <None Include="Resources\btn_ref_normal.png" />
+    <None Include="Resources\btn_ref_press.png" />
+    <None Include="Resources\disk_01_normal.png" />
+    <None Include="Resources\disk_02_normal.png" />
+    <None Include="Resources\disk_03_normal.png" />
+    <None Include="Resources\disk_04_normal.png" />
+    <None Include="Resources\disk_05_normal.png" />
+    <None Include="Resources\disk_06_normal.png" />
+    <None Include="Resources\disk_07_normal.png" />
+    <None Include="Resources\disk_08_normal.png" />
+    <None Include="Resources\disk_09_normal.png" />
+    <None Include="Resources\disk_10_normal.png" />
+    <None Include="Resources\tit_num2.png" />
+    <None Include="Resources\tit_num1.png" />
+    <None Include="Resources\num_g_bg_rgt.png" />
+    <None Include="Resources\num_g_bg_left.png" />
+    <None Include="Resources\num_g_bg_center.png" />
+    <None Include="Resources\ico_256x256.ico" />
+    <None Include="Resources\ico_complete.png" />
+    <None Include="Resources\ico_disk_update.png" />
+    <None Include="Resources\bg_popup_notit_l.png" />
+    <None Include="Resources\btn_popoup_write_normal.png" />
+    <None Include="Resources\btn_popoup_write_press.png" />
+    <None Include="Resources\btn_popup_ignore_normal.png" />
+    <None Include="Resources\btn_popup_ignore_press.png" />
+    <None Include="Resources\btn_treeview_openh_down.png" />
+    <None Include="Resources\btn_treeview_openh_hover.png" />
+    <None Include="Resources\btn_treeview_openh_normal.png" />
+    <None Include="Resources\bg_listbar_mid_l.png" />
+    <None Include="Resources\bg_listbar_mid_m.png" />
+    <None Include="Resources\bg_listbar_mid_r.png" />
+    <None Include="Resources\bg_popup_mid_l.png" />
+    <None Include="Resources\bg_popup_mid_m.png" />
+    <None Include="Resources\bg_popup_mid_r.png" />
+    <None Include="Resources\btn_disk_add_normal.png" />
+    <None Include="Resources\btn_disk_add_hover.png" />
+    <None Include="Resources\bg_popup_bot_r.png" />
+    <None Include="Resources\bg_popup_bot_m.png" />
+    <None Include="Resources\bg_popup_bot_l.png" />
+    <None Include="Resources\txt_backup_setspace.png" />
+    <None Include="Resources\img_update_pregress_r.png" />
+    <None Include="Resources\img_update_pregress_m.png" />
+    <None Include="Resources\img_update_pregress_l.png" />
+    <None Include="Resources\img_backup_disk.png" />
+    <None Include="Resources\btn_update_press.png" />
+    <None Include="Resources\btn_update_normal.png" />
+    <None Include="Resources\btn_update_delay_press.png" />
+    <None Include="Resources\btn_update_delay_normal.png" />
+    <None Include="Resources\btn_setting_press.png" />
+    <None Include="Resources\btn_list_file_press.png" />
+    <None Include="Resources\btn_list_file_hover.png" />
+    <None Include="Resources\btn_cling_start_press.png" />
+    <None Include="Resources\btn_cling_start_normal.png" />
+    <None Include="Resources\btn_cling_start_disable.png" />
+    <None Include="Resources\btn_backup_change_press.png" />
+    <None Include="Resources\btn_backup_change_normal.png" />
+    <None Include="Resources\bg_update_progress.png" />
+    <None Include="Resources\txt_login_version_9.png" />
+    <None Include="Resources\txt_login_version_8.png" />
+    <None Include="Resources\txt_login_version_7.png" />
+    <None Include="Resources\txt_login_version_6.png" />
+    <None Include="Resources\txt_login_version_5.png" />
+    <None Include="Resources\txt_login_version_4.png" />
+    <None Include="Resources\txt_login_version_3.png" />
+    <None Include="Resources\txt_login_version_2.png" />
+    <None Include="Resources\txt_login_version_1.png" />
+    <None Include="Resources\txt_login_version_0.png" />
+    <None Include="Resources\txt_state_sync_on.png" />
+    <None Include="Resources\txt_state_sync_off.png" />
+    <None Include="Resources\txt_state_sync_disable.png" />
+    <None Include="Resources\txt_state_record_on.png" />
+    <None Include="Resources\txt_sort_tree_on.png" />
+    <None Include="Resources\txt_sort_tree_disable.png" />
+    <None Include="Resources\txt_sort_list_on.png" />
+    <None Include="Resources\txt_sort_list_disable.png" />
+    <None Include="Resources\txt_login_version_dot.png" />
+    <None Include="Resources\txt_login_version.png" />
+    <None Include="Resources\txt_login_info.png" />
+    <None Include="Resources\logo_cling_114.png" />
+    <None Include="Resources\logo_cling_54.png" />
+    <None Include="Resources\line_list.png" />
+    <None Include="Resources\img_logo_cling.png" />
+    <None Include="Resources\img_login_top.png" />
+    <None Include="Resources\img_listbar_now.png" />
+    <None Include="Resources\img_list_month.png" />
+    <None Include="Resources\img_list_disk.png" />
+    <None Include="Resources\img_info_rewrite.png" />
+    <None Include="Resources\ico_warning.png" />
+    <None Include="Resources\ico_state_sync_on.png" />
+    <None Include="Resources\ico_state_sync_off.png" />
+    <None Include="Resources\ico_state_sync_disable.png" />
+    <None Include="Resources\ico_state_record_on.png" />
+    <None Include="Resources\ico_state_record_off.png" />
+    <None Include="Resources\ico_state_record_disable.png" />
+    <None Include="Resources\ico_popup_info.png" />
+    <None Include="Resources\ico_folder.png" />
+    <None Include="Resources\ico_file.png" />
+    <None Include="Resources\ico_error_b.png" />
+    <None Include="Resources\ico_dot.png" />
+    <None Include="Resources\div_login_bot.png" />
+    <None Include="Resources\div_list.png" />
+    <None Include="Resources\div_apptop.png" />
+    <None Include="Resources\btn_write_record_press.png" />
+    <None Include="Resources\btn_write_record_normal.png" />
+    <None Include="Resources\btn_tit_edit.png" />
+    <None Include="Resources\btn_sort_right.png" />
+    <None Include="Resources\btn_sort_left.png" />
+    <None Include="Resources\btn_setting_search_press.png" />
+    <None Include="Resources\btn_setting_search_normal.png" />
+    <None Include="Resources\btn_setting_search_hover.png" />
+    <None Include="Resources\btn_setting_normal.png" />
+    <None Include="Resources\btn_setting_logout_press.png" />
+    <None Include="Resources\btn_setting_logout_normal.png" />
+    <None Include="Resources\btn_setting_logout_hover.png" />
+    <None Include="Resources\btn_setting_account_press.png" />
+    <None Include="Resources\btn_setting_account_normal.png" />
+    <None Include="Resources\btn_setting_account_hover.png" />
+    <None Include="Resources\btn_search_press.png" />
+    <None Include="Resources\btn_search_normal.png" />
+    <None Include="Resources\btn_search_hover.png" />
+    <None Include="Resources\btn_popup_ok_press.png" />
+    <None Include="Resources\btn_popup_ok_norml.png" />
+    <None Include="Resources\btn_popup_ok_disable.png" />
+    <None Include="Resources\btn_popup_enter_press.png" />
+    <None Include="Resources\btn_popup_enter_normal.png" />
+    <None Include="Resources\btn_popup_enter_disable.png" />
+    <None Include="Resources\btn_popup_close_press.png" />
+    <None Include="Resources\btn_popup_close_normal.png" />
+    <None Include="Resources\btn_popup_cancel_press.png" />
+    <None Include="Resources\btn_popup_cancel_normal.png" />
+    <None Include="Resources\btn_next_64_press.png" />
+    <None Include="Resources\btn_next_64_normal.png" />
+    <None Include="Resources\btn_logo_cling.png" />
+    <None Include="Resources\btn_list_more.png" />
+    <None Include="Resources\btn_list_file_normal.png" />
+    <None Include="Resources\btn_disk_error.png" />
+    <None Include="Resources\bg_version.png" />
+    <None Include="Resources\bg_popup_notit_r.png" />
+    <None Include="Resources\bg_popup_notit_m.png" />
+    <None Include="Resources\bg_listbar_top_r.png" />
+    <None Include="Resources\bg_listbar_top_m.png" />
+    <None Include="Resources\bg_listbar_top_l.png" />
+    <None Include="Resources\bg_listbar_bot_r.png" />
+    <None Include="Resources\bg_listbar_bot_m.png" />
+    <None Include="Resources\bg_listbar_bot_l.png" />
+    <None Include="Resources\bg_inputbox_26_r.png" />
+    <None Include="Resources\bg_inputbox_26_m.png" />
+    <None Include="Resources\bg_inputbox_26_l.png" />
+    <None Include="Resources\bg_bot_version_r.png" />
+    <None Include="Resources\bg_bot_version_m.png" />
+    <None Include="Resources\bg_bot_version_l.png" />
+    <None Include="Resources\btn_state_sync_on.png" />
+    <None Include="Resources\btn_state_sync_off.png" />
+    <None Include="Resources\btn_state_sync_disable.png" />
+    <None Include="Resources\btn_state_record_on.png" />
+    <None Include="Resources\btn_state_record_off.png" />
+    <None Include="Resources\btn_state_record_disable.png" />
+    <None Include="Resources\btn_disk_normal.png" />
+    <None Include="Resources\btn_disk_hover.png" />
+    <None Include="Resources\ico_view_on.png" />
+    <None Include="Resources\ico_view_off.png" />
+    <None Include="Resources\txt_view_writing_normal.png" />
+    <None Include="Resources\txt_view_writing_dimmed.png" />
+    <None Include="Resources\txt_view_all_normal.png" />
+    <None Include="Resources\txt_view_all_dimmed.png" />
+    <None Include="Resources\txt_sort_time_on.png" />
+    <None Include="Resources\txt_sort_name_on.png" />
+    <None Include="Resources\logo_cling.png" />
+    <None Include="Resources\btn_prev_press.png" />
+    <None Include="Resources\btn_prev_normal.png" />
+    <None Include="Resources\btn_prev_hover.png" />
+    <None Include="Resources\btn_online_off.png" />
+    <None Include="Resources\btn_online_on.png" />
+    <None Include="Resources\btn_apptop_min_hover.png" />
+    <None Include="Resources\btn_apptop_min_press.png" />
+    <None Include="Resources\btn_apptop_min_normal.png" />
+    <None Include="Resources\btn_apptop_close02_normal.png" />
+    <None Include="Resources\btn_apptop_close02_hover.png" />
+    <None Include="Resources\btn_apptop_close02_press.png" />
+    <None Include="Resources\bg_bot_project_m.png" />
+    <None Include="Resources\bg_project.png" />
+    <None Include="Resources\bg_bot_project_l.png" />
+    <None Include="Resources\bg_bot_project_r.png" />
+    <None Include="Resources\bg_top_m.png" />
+    <None Include="Resources\bg_top_r.png" />
+    <None Include="Resources\bg_top_l.png" />
+    <None Include="Resources\bg_mid_r.png" />
+    <None Include="Resources\bg_mid_m.png" />
+    <None Include="Resources\bg_mid_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClingClientEngine\ClingClientEngine.csproj">
+      <Project>{3553A683-6152-446B-BCB4-B3762D4C170C}</Project>
+      <Name>ClingClientEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <Delete Files="$(TargetDir)$(TargetFileName).config" />
+    <Copy SourceFiles="$(ProjectDir)\config\app.$(Configuration).config" DestinationFiles="$(TargetDir)$(TargetFileName).config" />
+  </Target>
+</Project>
